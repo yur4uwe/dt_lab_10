@@ -88,10 +88,11 @@ func printResult(name string, m [][]int) {
 	if !ok {
 		fmt.Println("No saddle point (no pure-strategy equilibrium).")
 	} else {
-		fmt.Printf("Saddle point found. Value = %d\n", val)
-		fmt.Println("Equilibrium positions (row, column) — zero-based indices:")
+		fmt.Printf("Saddle point(s) found. Game value (payoff to row player) = %d\n", val)
+		fmt.Println("Equilibrium positions (row, column) — zero-based indices and payoffs:")
 		for _, p := range pos {
-			fmt.Printf("(%d, %d)\n", p[0], p[1])
+			i, j := p[0], p[1]
+			fmt.Printf("(%d, %d)  payoff = %d\n", i, j, m[i][j])
 		}
 	}
 	fmt.Println()
